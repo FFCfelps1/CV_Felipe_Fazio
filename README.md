@@ -2,7 +2,7 @@
 
 Personal CV website hosted on GitHub Pages.
 
-**Live:** https://felipefaziodacosta.github.io/CV_Felipe_Fazio
+**Live:** https://FFCfelps1.github.io/CV_Felipe_Fazio
 
 ## Features
 - Light (minimalist) & Dark mode with system preference detection and persistence
