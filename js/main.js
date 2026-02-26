@@ -64,15 +64,37 @@ backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+/* ─── SCROLL SPY ────────────────────────────────────────────── */
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const sections = [...navLinks].map(a => {
+  const id = a.getAttribute('href').slice(1);
+  return document.getElementById(id);
+}).filter(Boolean);
+
+function updateScrollSpy() {
+  const scrollMid = window.scrollY + window.innerHeight / 3;
+  let current = sections[0];
+
+  sections.forEach(sec => {
+    if (sec && sec.offsetTop <= scrollMid) current = sec;
+  });
+
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + (current?.id ?? ''));
+  });
+}
+
 /* ─── UNIFIED SCROLL LISTENER ──────────────────────────────── */
 window.addEventListener('scroll', () => {
   updateProgress();
   updateBackToTop();
+  updateScrollSpy();
 }, { passive: true });
 
 // Init on load
 updateProgress();
 updateBackToTop();
+updateScrollSpy();
 
 /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
 const observer = new IntersectionObserver((entries) => {

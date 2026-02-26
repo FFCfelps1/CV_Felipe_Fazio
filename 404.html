@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Página não encontrada</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .not-found {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 1rem;
+    }
+    .not-found .code {
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      opacity: .15;
+    }
+    .not-found h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: -1rem;
+    }
+    .not-found p {
+      color: var(--text-muted);
+      max-width: 340px;
+    }
+    .not-found a {
+      margin-top: .5rem;
+      display: inline-block;
+      padding: .55rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: .9rem;
+      transition: opacity .2s;
+    }
+    .not-found a:hover { opacity: .85; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="not-found">
+    <div class="code">404</div>
+    <h1>Página não encontrada</h1>
+    <p>A página que você procura não existe ou foi movida.</p>
+    <a href="/">← Voltar ao CV</a>
+  </div>
+  <script>
+    // Respect saved theme
+    const t = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
+</body>
+</html>
