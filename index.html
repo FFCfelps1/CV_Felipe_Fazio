@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Felipe Fazio da Costa – CV</title>
   <meta name="description" content="CV de Felipe Fazio da Costa, estudante de Engenharia da Computação no Instituto Mauá de Tecnologia." />
+  <meta name="author" content="Felipe Fazio da Costa" />
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Felipe Fazio da Costa – CV" />
+  <meta property="og:description" content="Estudante de Engenharia da Computação no IMT. Experiência em sistemas embarcados, telemetria e cloud." />
+  <meta property="og:url"         content="https://FFCfelps1.github.io/CV_Felipe_Fazio" />
+  <meta property="og:image"       content="https://FFCfelps1.github.io/CV_Felipe_Fazio/assets/og-image.png" />
+  <meta name="twitter:card"       content="summary" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,9 +22,18 @@
 </head>
 <body>
 
+  <!-- ─── SCROLL PROGRESS ─────────────────────────────────────── -->
+  <div id="scroll-progress"></div>
+
   <!-- ─── NAVBAR ─────────────────────────────────────────────── -->
   <nav class="navbar">
     <span class="nav-logo">FF</span>
+    <ul class="nav-links">
+      <li><a href="#about" data-lang="pt">Sobre</a><a href="#about" data-lang="en" hidden>About</a></li>
+      <li><a href="#experience" data-lang="pt">Experiência</a><a href="#experience" data-lang="en" hidden>Experience</a></li>
+      <li><a href="#projects" data-lang="pt">Projetos</a><a href="#projects" data-lang="en" hidden>Projects</a></li>
+      <li><a href="#skills" data-lang="pt">Habilidades</a><a href="#skills" data-lang="en" hidden>Skills</a></li>
+    </ul>
     <div class="nav-actions">
       <button id="lang-toggle" class="btn-icon" aria-label="Trocar idioma / Switch language">
         <span data-lang="pt">EN</span>
@@ -34,6 +53,9 @@
   <!-- ─── HEADER ──────────────────────────────────────────────── -->
   <header class="hero reveal">
     <div class="container">
+      <div class="hero-inner">
+        <div class="hero-avatar" aria-hidden="true">FF</div>
+        <div class="hero-text">
       <h1>Felipe Fazio da Costa</h1>
       <p class="subtitle">
         <span data-lang="pt">Estudante de Engenharia da Computação</span>
@@ -52,12 +74,19 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/felipe-fazio-da-costa" target="_blank" rel="noopener" class="contact-item">
+        <a href="https://www.linkedin.com/in/felipefaziodacosta/" target="_blank" rel="noopener" class="contact-item">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
+        <span class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-lang="pt">São Bernardo do Campo, SP</span>
+          <span data-lang="en" hidden>São Bernardo do Campo, SP</span>
+        </span>
         <span class="contact-item flag" title="Brasileiro">🇧🇷</span>
       </div>
+        </div><!-- .hero-text -->
+      </div><!-- .hero-inner -->
     </div>
   </header>
 
@@ -123,6 +152,60 @@
       </div>
     </section>
 
+    <!-- ─── PROJECTS ──────────────────────────────────────────────── -->
+    <section id="projects" class="section reveal">
+      <h2 class="section-title">
+        <span data-lang="pt">Projetos</span>
+        <span data-lang="en" hidden>Projects</span>
+      </h2>
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div>
+            <h3 data-lang="pt">Emulação de Instrumento de Espectrômetro via QEMU</h3>
+            <h3 data-lang="en" hidden>Spectrograph Instrument Emulation with QEMU</h3>
+            <span class="project-org">NSEE – IMT × DLR (German Aerospace Center)</span>
+          </div>
+          <a href="https://github.com/FFCfelps1" target="_blank" rel="noopener" class="project-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+        <p data-lang="pt">Desenvolvimento de um ambiente virtual para emulação de instrumentos de espectrômetro aplicados às missões espaciais VERITAS e EnVision (NASA/ESA), em parceria com o DLR. O projeto utiliza QEMU para criar uma camada de abstração de hardware que permite testar firmware de instrumentos científicos sem a necessidade de hardware físico.</p>
+        <p data-lang="en" hidden>Development of a virtual environment for spectrograph instrument emulation applied to the VERITAS and EnVision space missions (NASA/ESA), in partnership with DLR. The project uses QEMU to create a hardware abstraction layer enabling scientific instrument firmware testing without physical hardware.</p>
+        <div class="project-tags">
+          <span class="tag">QEMU</span>
+          <span class="tag">C</span>
+          <span class="tag">Python</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Embedded Systems</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-header">
+          <div>
+            <h3 data-lang="pt">Sistema de Telemetria – Shell Eco-marathon</h3>
+            <h3 data-lang="en" hidden>Telemetry System – Shell Eco-marathon</h3>
+            <span class="project-org">Eco Mauá – IMT</span>
+          </div>
+          <a href="https://github.com/FFCfelps1" target="_blank" rel="noopener" class="project-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+        <p data-lang="pt">Implementação de sistema de telemetria em tempo real para veículo de alta eficiência energética na competição Shell Eco-marathon. Dados de sensores (corrente, tensão, velocidade, temperatura) são coletados por microcontroladores, transmitidos via protocolo serial e visualizados em dashboards Grafana com banco de dados InfluxDB.</p>
+        <p data-lang="en" hidden>Real-time telemetry system implementation for a high-efficiency vehicle in the Shell Eco-marathon competition. Sensor data (current, voltage, speed, temperature) is collected by microcontrollers, transmitted via serial protocol, and visualised in Grafana dashboards backed by InfluxDB.</p>
+        <div class="project-tags">
+          <span class="tag">Grafana</span>
+          <span class="tag">InfluxDB</span>
+          <span class="tag">Microcontrollers</span>
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ─── SKILLS ───────────────────────────────────────────────── -->
     <section id="skills" class="section reveal">
       <h2 class="section-title">
@@ -153,6 +236,7 @@
             <span class="tag">Grafana</span>
             <span class="tag">InfluxDB</span>
             <span class="tag">Microcontrollers</span>
+            <span class="tag">QEMU</span>
             <span class="tag">Easyeda</span>
             <span class="tag">Microsoft Office</span>
             <span class="tag">AWS</span>
@@ -261,6 +345,11 @@
       <a href="https://github.com/FFCfelps1/CV_Felipe_Fazio" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
+
+  <!-- ─── BACK TO TOP ─────────────────────────────────────────── -->
+  <button id="back-to-top" aria-label="Voltar ao topo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>

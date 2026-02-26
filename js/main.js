@@ -43,6 +43,37 @@ document.getElementById('lang-toggle').addEventListener('click', () => {
   applyLang(currentLang === 'pt' ? 'en' : 'pt');
 });
 
+/* ─── SCROLL PROGRESS BAR ──────────────────────────────────── */
+const progressBar = document.getElementById('scroll-progress');
+
+function updateProgress() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}
+
+/* ─── BACK TO TOP ───────────────────────────────────────────── */
+const backToTop = document.getElementById('back-to-top');
+
+function updateBackToTop() {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ─── UNIFIED SCROLL LISTENER ──────────────────────────────── */
+window.addEventListener('scroll', () => {
+  updateProgress();
+  updateBackToTop();
+}, { passive: true });
+
+// Init on load
+updateProgress();
+updateBackToTop();
+
 /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
