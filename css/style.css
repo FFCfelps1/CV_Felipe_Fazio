@@ -440,6 +440,10 @@ main { padding: 1.5rem 0 4rem; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 480px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
+
 .cert-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -455,6 +459,9 @@ main { padding: 1.5rem 0 4rem; }
   transition: transform var(--transition), box-shadow var(--transition);
   font-family: inherit;
   color: var(--text);
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 .cert-card:hover {
   transform: translateY(-3px);
