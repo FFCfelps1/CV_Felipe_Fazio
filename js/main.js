@@ -42,7 +42,29 @@ applyLang(currentLang);
 document.getElementById('lang-toggle').addEventListener('click', () => {
   applyLang(currentLang === 'pt' ? 'en' : 'pt');
 });
+/* ─── CERTIFICATE MODAL ──────────────────────────────────── */
+const modal      = document.getElementById('cert-modal');
+const modalImg   = document.getElementById('modal-img');
+const modalCaption = document.getElementById('modal-caption');
 
+function openModal(src, caption) {
+  modalImg.src = src;
+  modalImg.alt = caption;
+  modalCaption.textContent = caption;
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  modalImg.src = '';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !modal.hidden) closeModal();
+});
 /* ─── SCROLL PROGRESS BAR ──────────────────────────────────── */
 const progressBar = document.getElementById('scroll-progress');
 
