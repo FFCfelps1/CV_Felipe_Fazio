@@ -19,6 +19,8 @@ js/main.js          ← theme toggle, language switch, scroll animations
 assets/             ← place cv_felipe_fazio.pdf here
 ```
 
+The Education section uses `assets/maua_logo.png` and `assets/cs_logo.png` for the Instituto Mauá de Tecnologia and CentraleSupélec entries.
+
 ## Deploy (GitHub Pages)
 1. Go to the repository on GitHub → **Settings → Pages**
 2. Source: `Deploy from a branch` → branch `main`, folder `/ (root)`
